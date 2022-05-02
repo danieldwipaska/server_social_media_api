@@ -1,0 +1,18 @@
+{
+  "name": "practice4-social-media-api",
+  "version": "1.0.0",
+  "description": "membuat REST API untuk sosial media",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Daniel Kamasi",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.1",
+    "nodemon": "^2.0.16"
+  }
+}
