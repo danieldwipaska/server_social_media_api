@@ -1,12 +1,18 @@
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
-dotenv.config();
+const helmet = require('helmet');
+const morgan = require('morgan');
 const authRoute = require('./routes/auth');
+const userRoute = require('./routes/users');
 const mongoose = require('mongoose');
+
+dotenv.config();
 
 //MIDDLEWARES
 app.use(express.json());
+app.use(helmet());
+app.use(morgan('common'));
 
 // Mongodb Connect
 mongoose
@@ -21,6 +27,7 @@ mongoose
 
 //ROUTES
 app.use('/api/auth', authRoute);
+app.use('/api/users', userRoute);
 
 //LISTEN
 const PORT = process.env.PORT_NUM || 3000;
